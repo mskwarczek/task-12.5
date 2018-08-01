@@ -8,7 +8,7 @@ function getQuote() {
         .then(function(resp) {
             return resp.json();
         })
-        .then(createTweet);
+        .then(createTweet());
 }
 
 function createTweet(input) {
@@ -20,7 +20,7 @@ function createTweet(input) {
     if (!quoteAuthor.length) {
         quoteAuthor = "Unknown author";
     }
-    var tweetText = "Quote of the day - " + quoteText + " Author: " + quoteAuthor;
+    var tweetText = "Quote of the day - " + quoteText + ". Author: " + quoteAuthor;
     if (tweetText.length > 140) {
         getQuote();
     } else {
